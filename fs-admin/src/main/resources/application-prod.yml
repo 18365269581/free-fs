@@ -1,15 +1,15 @@
 spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://127.0.0.1:3306/free-fs?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
-    username: root
-    password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    #    url: jdbc:mysql://127.0.0.1:3306/free-fs?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+    #    username: root
+    #    password: root
+    #    driver-class-name: com.mysql.cj.jdbc.Driver
     # postgresql数据库配置
-#    url: jdbc:postgresql://127.0.0.1:5432/free-fs?useUnicode=true&characterEncoding=utf8&useSSL=true&autoReconnect=true&reWriteBatchedInserts=true
-#    username: postgres
-#    password: postgres
-#    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://pgm-j6c26kh03965zzd8.pg.cnhk.rds.aliyuncs.com:5432/free-fs?useUnicode=true&characterEncoding=utf8&useSSL=true&autoReconnect=true&reWriteBatchedInserts=true
+    username: postgres
+    password: WxbdPg2026#
+    driver-class-name: org.postgresql.Driver
     # 数据源配置
     hikari:
       # 最大连接池数量
@@ -62,7 +62,7 @@ fs:
   # 预览配置
   preview:
     # 预览文件流处理地址，默认是本服务地址,端口号
-    stream-api: http://localhost:8080/api/file/stream/preview
+    stream-api: http://47.86.242.68:8080/api/file/stream/preview
     # 预览文件最大大小（字节），默认500MB
     max-file-size: 524288000
     # 单次Range请求最大大小（字节），默认10MB
@@ -79,7 +79,7 @@ fs:
       # Linux: /usr/lib/libreoffice
       # Windows: C:/Program Files/LibreOffice
       # Mac: /Applications/LibreOffice.app/Contents
-      office-home: C:/Program Files/LibreOffice
+      office-home: /usr/lib/libreoffice
       task-execution-timeout: 120000
       task-queue-timeout: 30000
       max-tasks-per-process: 200
@@ -89,7 +89,7 @@ fs:
   storage:
     local:
       base-path: /data/upload
-      base-url: http://localhost:8080/files
+      base-url: http://47.86.242.68:8080/files
 
 mybatis-flex:
   # sql审计
